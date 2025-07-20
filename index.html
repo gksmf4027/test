@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindBridge</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="js/index.js" defer></script>
+  </head>
+  <body>
+    <header class="flex active">
+      <div class="header_b flex inner">
+        <h1 class="logo">
+          <a href="index.html"><img src="img/H_logo.svg" alt="MindBridge" /></a>
+        </h1>
+        <nav class="font">
+          <ul class="gnb flex">
+            <li><a href="">소개</a></li>
+            <li><a href="">참여</a></li>
+            <li><a href="sponsor-main.html">후원</a></li>
+            <li><a href="">고객센터</a></li>
+            <li><a href="">나의 정보</a></li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="util flex inner">
+        <li><button type="button" id="loginBtn">로그인</button></li>
+        <li><a href="">회원가입</a></li>
+        <li>
+          <button type="button" id="bt">language</button>
+          <ul class="language" id="language">
+            <li>
+              <button><img src="img/korea.png" alt="태극기" />KR</button>
+            </li>
+            <li>
+              <button><img src="img/usa.png" alt="성조기" />USA</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <section class="modal-overlay flex" id="modalOverlay">
+        <div class="modal-content">
+          <span class="closeBtn">&times;</span>
+          <form action="">
+            <h2 class="login">LOGIN</h2>
+            <ul class="userBox flex">
+              <li class="id">
+                <label for="userId" class="blind">id</label>
+                <input
+                  type="text"
+                  id="userId"
+                  name="userId"
+                  placeholder="ID"
+                  required
+                />
+              </li>
+              <li class="pw">
+                <label for="userPw" class="blind">pw</label>
+                <input
+                  type="password"
+                  id="userPw"
+                  name="userPw"
+                  placeholder="PW"
+                  required
+                />
+              </li>
+            </ul>
+            <div class="autoSavebtn flex">
+              <p>
+                <input type="checkbox" name="autoSave" id="autoSave" />
+                <label for="autoSave">간편로그인 자동저장</label>
+              </p>
+              <p>
+                <span class="bar"><a href="">아이디 찾기</a></span>
+                <span><a href="">비밀번호 찾기</a></span>
+              </p>
+            </div>
+            <!--//autoSavebtn-->
+            <div class="loginBtnWrap">
+              <div class="loginBtn flex">
+                <button class="radius2">로그인</button>
+                <p><a href="" class="radius2">회원가입</a></p>
+              </div>
+              <!--//loginBtn-->
+              <span>또는</span>
+              <ul class="icon flex">
+                <li>
+                  <a href=""
+                    ><img src="img/icoc2-1365.png" alt="1365 자원봉사포털"
+                  /></a>
+                </li>
+                <li>
+                  <a href=""><img src="img/icoc-naver.png" alt="네이버" /></a>
+                </li>
+                <li>
+                  <a href=""><img src="img/icoc-KAKAO.png" alt="카카오톡" /></a>
+                </li>
+              </ul>
+            </div>
+            <!--//loginBtnWrap-->
+          </form>
+        </div>
+        <!--//modal-content-->
+      </section>
+      <!--//modal-overlay-->
+    </header>
+    <main class="inner">
+      <div class="flex banner">
+        <div class="carousel">
+          <ul class="slide-track flex">
+            <li class="slide">
+              <img
+                src="img/banner1.png"
+                alt="재능기부 자원 봉사자를 모집합니다"
+              />
+            </li>
+            <li class="slide">
+              <img src="img/banner2.png" alt="수어통역 보편화" />
+            </li>
+            <li class="slide">
+              <img
+                src="img/banner3.png"
+                alt="함께하는 자원봉사 따뜻한 손길이 모여 세상이 밝아집니다"
+              />
+            </li>
+          </ul>
+          <div class="btnWrap flex">
+            <p class="page-number">1 / 3</p>
+            <button type="button" class="prev">
+              <img src="img/left-bt.svg" alt="이전화면" />
+            </button>
+            <button type="button" class="play-pause-btn flex">⏸</button>
+            <button type="button" class="next">
+              <img src="img/right-bt.svg" alt="다음화면" />
+            </button>
+          </div>
+        </div>
+        <section class="service_menu radius shadow">
+          <h2 class="font">재능기부 봉사활동</h2>
+          <ul class="iconBox flex">
+            <li><a href="">미술</a></li>
+            <li><a href="">통역</a></li>
+            <li><a href="">교육</a></li>
+            <li><a href="">기술/IT</a></li>
+            <li><a href="">동물</a></li>
+            <li><a href="">의료</a></li>
+          </ul>
+        </section>
+      </div>
+      <!--//banner-->
+      <section class="volunteer">
+        <ul class="flex">
+          <li><h2 class="title font">모집중인 봉사활동</h2></li>
+          <li>
+            <a href=""><img src="img/more.svg" alt="상세보기" /></a>
+          </li>
+        </ul>
+        <div class="cardWrap flex">
+          <div class="card-track flex">
+            <section class="card" id="slide">
+              <a href="">
+                <ul class="card_t">
+                  <li><span>재난·재해</span></li>
+                  <li><span>경북</span></li>
+                </ul>
+                <h3>
+                  영덕군 산불피해 이재민 새 보금자리 입주를 위한 주택 정비 및
+                  생활환경 개선 봉사활동
+                </h3>
+                <ul class="card_b">
+                  <li>모집인원:30명/1일</li>
+                  <li>모집기간:25.06.13~25.06.16</li>
+                  <li>봉사기간:25.06.17~25.06.17</li>
+                </ul>
+              </a>
+            </section>
+            <section class="card">
+              <a href="">
+                <ul class="card_t">
+                  <li><span>재난·재해</span></li>
+                  <li><span>경북</span></li>
+                </ul>
+                <h3>
+                  2025년 영덕 산불 피해 구호 물품 정리 활동(추가 물품 분류 및
+                  배포 지원)
+                </h3>
+                <ul class="card_b">
+                  <li>모집인원:5명/1일</li>
+                  <li>모집기간:25.06.16~25.06.16</li>
+                  <li>봉사기간:25.06.17~25.06.17</li>
+                </ul>
+              </a>
+            </section>
+            <section class="card">
+              <a href="">
+                <ul class="card_t">
+                  <li><span>재난·재해</span></li>
+                  <li><span>경북</span></li>
+                </ul>
+                <h3>
+                  안동 산불재난 봉사활동 (이재민 물품지원 및 거주지 환경 정비)
+                </h3>
+                <ul class="card_b">
+                  <li>모집인원:10명/1일</li>
+                  <li>모집기간:25.06.10~25.06.19</li>
+                  <li>봉사기간:25.06.12~25.06.20</li>
+                </ul>
+              </a>
+            </section>
+            <section class="card">
+              <a href="">
+                <ul class="card_t seoul">
+                  <li><span>지역안전·보호</span></li>
+                  <li><span>서울</span></li>
+                </ul>
+                <h3>
+                  토, 일 (16:00~20:00) [서울형 키즈카페 시립시설 운영보조 및
+                  아동 프로그램 지원]
+                </h3>
+                <ul class="card_b">
+                  <li>모집인원:3명/1일</li>
+                  <li>모집기간:25.03.29~25.06.16</li>
+                  <li>봉사기간:25.04.05~25.07.05</li>
+                </ul>
+              </a>
+            </section>
+            <section class="card">
+              <a href="">
+                <ul class="card_t seoul">
+                  <li><span>생활편의</span></li>
+                  <li><span>서울</span></li>
+                </ul>
+                <h3>
+                  [굿윌스토어 강서점_오전] 장애인 근로자 업무 지원 및 보조
+                </h3>
+                <ul class="card_b">
+                  <li>모집인원:5명/1일</li>
+                  <li>모집기간:25.04.02~25.07.04</li>
+                  <li>봉사기간:25.05.01~25.07.31</li>
+                </ul>
+              </a>
+            </section>
+            <section class="card">
+              <a href="">
+                <ul class="card_t seoul">
+                  <li><span>지역안전·보호</span></li>
+                  <li><span>서울</span></li>
+                </ul>
+                <h3>
+                  [굿윌스토어 강서점_오전] 장애인 근로자 업무 지원 및 보조
+                </h3>
+                <ul class="card_b">
+                  <li>모집인원:5명/1일</li>
+                  <li>모집기간:25.04.02~25.07.04</li>
+                  <li>봉사기간:25.05.01~25.07.31</li>
+                </ul>
+              </a>
+            </section>
+          </div>
+          <!--//card-track-->
+        </div>
+        <!--//cardWrap-->
+        <ul class="bt flex">
+          <li class="prev">
+            <button type="button">
+              <img src="img/left-bt.svg" alt="이전화면" />
+            </button>
+          </li>
+          <li class="next">
+            <button type="button">
+              <img src="img/right-bt.svg" alt="다음화면" />
+            </button>
+          </li>
+        </ul>
+      </section>
+      <!--//volunteer-->
+      <section class="map">
+        <ul>
+          <li><h2 class="title">내 근처 활동 찾기</h2></li>
+          <li><p>내 주변 봉사기관명 또는 등록기관명을 검색해보세요!</p></li>
+        </ul>
+        <form action="" method="get" class="flex search">
+          <label for="search"></label>
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="검색어를 입력해주세요"
+          />
+          <input type="image" src="img/search2.svg" alt="검색" />
+        </form>
+      </section>
+      <!--//map-->
+      <section class="news flex radius">
+        <div class="article flex radius">
+          <h2 class="title">최근 소식</h2>
+          <article class="flex">
+            <a
+              href="https://news.sbs.co.kr/news/endPage.do?news_id=N1008138894"
+              target="_blank"
+              title="새창열림"
+              rel="noopener noreferrer"
+            >
+              <!--
+              rel=noopener 보안과 성능을 향상시키기 위한 속성
+              rel=noreferrer 악의적인 사이트가 window.opener를 통해 원래 페이지를 조작할 수 있음
+              링크를 클릭했을 때 Referer 헤더(어디서 왔는지 정보)를 전송하지 않음.
+              .-->
+              <div class="imgBox">
+                <img
+                  src="img/news1.jpg"
+                  alt="고기 끊겼다 소식에 출동한 주지스님"
+                />
+              </div>
+              <h3>
+                "고기 끊겼다" 소식에 출동한 주지스님 '훈훈'<br />출처 : SBS 뉴스
+              </h3>
+            </a>
+          </article>
+          <article>
+            <a
+              href="https://www.hani.co.kr/arti/economy/biznews/1205680.html"
+              target="_blank"
+              title="새창열림"
+              rel="noopener noreferrer"
+              ><div class="imgBox">
+                <img
+                  src="img/news2.jpeg"
+                  alt="대학 내 자원봉사 활성화 및 지역사회 공유협력 네트원크 확대를 위한 서울시립대학교 - 서울시 자원봉사센터 업무협약 체결식"
+                />
+              </div>
+              <h3>
+                서울시립대-서울시자원봉사센터,'대학-지역사회 협력' 새 지평 열다
+              </h3>
+            </a>
+          </article>
+          <article>
+            <a
+              href="https://www.newsfreezone.co.kr/news/articleView.html?idxno=594536"
+              target="_blank"
+              title="새창열림"
+              rel="noopener noreferrer"
+              ><div class="imgBox">
+                <img
+                  src="img/news3.jpg"
+                  alt="사랑의연탄나눔운동 사랑의빵나눔터 따뜻한 겨울 함께 나눈는 사랑의연탄"
+                />
+              </div>
+              <h3>
+                [대학소식]대구보건대 교직원·학생들, '사랑의 연탄 나눔' 봉사활동
+                펼쳐
+              </h3>
+            </a>
+          </article>
+          <article>
+            <a
+              href="http://www.kstnews.co.kr/news/articleView.html?idxno=31803"
+              target="_blank"
+              title="새창열림"
+              rel="noopener noreferrer"
+              ><div class="imgBox">
+                <img src="img/news4.jpg" alt="파주노인복지관 간식 나눔행사" />
+              </div>
+              <h3>
+                웃음더하기 연예인봉사단, 간식나눔 봉사 김하얀 회장 “소외계층
+                이웃분에게 웃을 수 있는 세...
+              </h3>
+            </a>
+          </article>
+        </div>
+        <div class="video">
+          <h2 class="title">YOUTUBE 영상</h2>
+          <article>
+            <a
+              href="https://www.youtube.com/watch?v=I1IPlJaiQF4"
+              target="_blank"
+              title="새창열림"
+              rel="noopener noreferrer"
+              ><div class="imgBox">
+                <img src="img/news5.png" alt="자원봉사활동 활성화 업무협약" />
+                <h3>전라남도교육청, 지역과 함께 ‘자원봉사활동’ 활성화</h3>
+              </div>
+            </a>
+          </article>
+          <article>
+            <a
+              href="https://www.youtube.com/watch?v=BX3zssMy0Gg"
+              target="_blank"
+              title="새창열림"
+              rel="noopener noreferrer"
+              ><div class="imgBox">
+                <img
+                  src="img/news6.png"
+                  alt="포스코 다큐 영화 새로운 발견의 여정 인도네시아"
+                />
+              </div>
+              <h3>
+                [다큐] 5년만에 재개된 해외봉사 | 포스코 비욘드 17기 | 인도네시아
+                찔레곤
+              </h3>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer inner">
+        <div class="f_t flex">
+          <p class="f_logo"><img src="img/f_logo.svg" alt="MindBridge" /></p>
+          <nav>
+            <ul class="f_gnb flex">
+              <li><a href="">소개</a></li>
+              <li><a href="">참여</a></li>
+              <li><a href="">후원</a></li>
+              <li><a href="">고객센터</a></li>
+              <li><a href="">나의 정보</a></li>
+            </ul>
+          </nav>
+        </div>
+        <address class="f_b">
+          <p class="flex">
+            <span><b>사단법인</b> MindBridge</span
+            ><span><b>주소</b> (30112) 세종특별자치시 도움6로 42(어진동)</span
+            ><span><b>고유번호</b> 123-456-7890</span>
+          </p>
+          <p class="flex">
+            <span><b>대표자</b> 이하늘</span>
+            <span><b>개인정보관리담당자</b> 이하늘</span
+            ><span><b>전화번호</b> 0507-1418-1644</span
+            ><span><b>이메일</b> gksmf4027@naver.com</span>
+          </p>
+
+          <p class="copy">
+            <small
+              >Copyright © 2025 사단법인 MindBridge All rights reserved.</small
+            >
+          </p>
+        </address>
+      </div>
+      <!--//footer-->
+    </footer>
+  </body>
+</html>
