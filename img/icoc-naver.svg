@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.23 80.24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #03c75a;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-family: BerlinSansFBDemi-Bold, 'Berlin Sans FB Demi';
+        font-size: 62.59px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="40.11" cy="40.12" rx="40.11" ry="40.12"/>
+  <text class="cls-2" transform="translate(16.85 61.17)"><tspan x="0" y="0">N</tspan></text>
+</svg>

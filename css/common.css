@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "GongGothicMedium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff")
+    format("woff");
+}
+
+:root {
+  --main-color: #076ab7;
+  --accent-color: #f84d45;
+  --sub--color: #fad6cb;
+  --text-color: #34384d;
+  --bg--color: #f1f1fb;
+  --tt32-size: 3.2rem;
+  --tt28-size: 2.8rem;
+  --tt24-size: 2.4rem;
+  --tt20-size: 2rem;
+  --tt18-size: 1.8rem;
+  --tt16-size: 1.6rem;
+  --tt14-size: 1.4rem;
+  --border-radius: 2rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Noto Sans", "Noto Sans KR", sans-serif;
+  font-style: normal;
+  font-size: 1.6rem;
+  color: var(--text-color);
+}
+
+.font,
+.title,
+.title2 {
+  font-family: "GongGothicMedium";
+}
+.title2 {
+  font-size: var(--tt24-size);
+}
+.title {
+  font-size: 3.2rem;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.23 80.24">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fae100;
+      }
+
+      .cls-3 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+
+      .cls-2 {
+        font-family: ArialRoundedMTBold, 'Arial Rounded MT Bold';
+        font-size: 17px;
+      }
+
+      .cls-5 {
+        fill: #39282e;
+      }
+    </style>
+  </defs>
+  <ellipse class="cls-1" cx="40.11" cy="40.12" rx="40.11" ry="40.12"/>
+  <g>
+    <path class="cls-5" d="M67.54,37.44c0,11.8-11.53,21.43-26.04,22.01-.46,.02-3.1-.08-3.57-.08-1.89,0-11.09,5.53-13.86,5.49,2.81-3.52,4.18-6.17,3.7-7.73-8.95-3.63-15.09-11.08-15.09-19.69,0-12.17,12.28-22.04,27.43-22.04s27.43,9.87,27.43,22.04Z"/>
+    <text class="cls-2" transform="translate(18.66 44.31)"><tspan class="cls-3" x="0" y="0">T</tspan><tspan class="cls-4" x="9.55" y="0">ALK</tspan></text>
+  </g>
+</svg>

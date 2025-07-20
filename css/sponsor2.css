@@ -1,0 +1,506 @@
+.title {
+  padding: 75px 0 45px;
+  font-size: var(--tt24-size);
+}
+main > form label,
+.sub_title {
+  display: inline-block;
+  width: 105px;
+  margin-right: 42px; /*30*/
+  font-size: var(--tt18-size);
+  text-align: center;
+}
+.radius {
+  border-radius: 20px;
+}
+.radius2 {
+  border-radius: 10px;
+}
+.inner {
+  width: 1440px;
+  margin: auto;
+}
+.shadow {
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.util .on {
+  display: block;
+}
+body {
+  /*background: url(../img/22e22995-8d14-4cf4-9c3b-345d2706bed0.png) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;*/
+  color: var(--text-color);
+}
+header {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 110px;
+  background: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+}
+/*util*/
+.util {
+  position: absolute;
+  top: 0;
+  right: 198px;
+  gap: 2rem;
+  width: 300px;
+  line-height: 24px;
+  padding: 5px 0;
+}
+
+.util li button,
+.util li a {
+  position: relative;
+  display: block;
+  padding-left: 18px;
+  background: url(../img/small_p2.png) 0 50% no-repeat;
+  font-size: 1.4rem;
+  text-align: center;
+}
+.util button {
+  color: var(--text-color);
+}
+.util li:nth-child(2) a {
+  position: relative;
+  padding-left: 26px;
+  background-image: url(../img/icon_p2.png);
+}
+.util li a::before,
+.util li a::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: "";
+  width: 1px;
+  height: 12px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.util li a::before {
+  left: 0;
+  margin-left: -10px;
+}
+.util li a::after {
+  right: 0;
+  margin-right: -10px;
+}
+.util li:last-child {
+  position: relative;
+}
+.util #bt {
+  height: 20px;
+  padding-left: 25px;
+  background: url(../img/icon_english.png) 0 50% no-repeat;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+/*modal*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+/* 닫기 버튼 */
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: var(--tt28-size);
+  font-weight: 700;
+}
+.login {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: var(--tt24-size);
+  font-weight: 700;
+}
+.modal-content {
+  position: relative;
+  width: 550px;
+  padding: 45px 80px;
+  background: var(--bg--color);
+  border-radius: 20px;
+}
+.userBox {
+  flex-direction: column;
+  gap: 15px;
+  padding-bottom: 20px;
+}
+.userBox input {
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--text-color);
+}
+input::placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: var(--tt16-size);
+  font-weight: 700;
+}
+.autoSavebtn {
+  justify-content: space-between;
+  padding-bottom: 25px;
+  font-size: var(--tt14-size);
+}
+.autoSavebtn .bar {
+  padding-right: 5px;
+  position: relative;
+}
+.autoSavebtn .bar::after {
+  position: absolute;
+  top: 12px;
+  right: 0;
+  content: "";
+  width: 3px;
+  height: 3px;
+  border: 50%;
+  background: var(--text-color);
+}
+.loginBtn {
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+.loginBtn button,
+.loginBtn p {
+  flex: 1;
+  height: 45px;
+  line-height: 45px;
+  font-size: var(--tt16-size);
+}
+.loginBtn button {
+  background: var(--text-color);
+  color: var(--bg--color);
+}
+.loginBtn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--bg--color);
+  border: 1px solid var(--text-color);
+}
+.loginBtnWrap span {
+  position: relative;
+  display: block;
+  padding: 0 20px 0;
+  text-align: center;
+}
+.loginBtnWrap span::before,
+.loginBtnWrap span::after {
+  position: absolute;
+  top: 50%;
+  content: "";
+  width: 160px;
+  height: 1px;
+  background: var(--text-color);
+}
+.loginBtnWrap span::before {
+  left: 0;
+}
+.loginBtnWrap span::after {
+  right: 0;
+}
+.icon {
+  padding-top: 25px;
+  justify-content: space-around;
+}
+.icon img {
+  width: 70px;
+  height: 70px;
+}
+/*//modal*/
+.language {
+  display: none;
+  position: absolute;
+  top: 35px;
+  width: 90px;
+  background: #fff;
+  border: 1px solid var(--text-color);
+  border-radius: 10px;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.language li {
+  padding: 8px 15px;
+  border-radius: 0 0 10px 10px;
+}
+.language li:hover {
+  background: rgb(241, 241, 251, 0.6);
+}
+.language li:first-child {
+  padding-bottom: 3px;
+  border-radius: 10px 10px 0 0;
+}
+.language li button {
+  padding-left: 0;
+  background: none;
+}
+.util .language img {
+  width: 18px;
+  margin-right: 8px;
+}
+.header_b {
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.header_b .gnb {
+  padding-top: 20px;
+  gap: 6rem;
+}
+.gnb li a {
+  padding: 0 20px;
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+.gnb li:last-child a {
+  padding-right: 0;
+}
+
+/*main*/
+main {
+  background: url(../img/sponsor_visual.png) no-repeat;
+  background-attachment: fixed;
+  padding: 110px 0;
+  min-height: 100vh;
+}
+main > form {
+  width: 760px;
+  margin: 100px 40px 0 auto;
+  padding: 0 63px 75px;
+  background: #fff;
+  font-size: var(--tt18-size);
+}
+main > form section {
+  padding-bottom: 90px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+main > form button {
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  font-size: 1.8rem;
+  background: var(--bg--color);
+}
+main > form li button.on {
+  background: var(--accent-color);
+  color: var(--bg--color);
+  font-weight: 600;
+}
+main > form input {
+  height: 50px;
+  padding-left: 20px;
+  background: var(--bg--color);
+  border: none;
+  color: var(--text-color);
+  font-size: var(--tt18-size);
+}
+main > form input::placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.25);
+}
+main > form label {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+}
+.sponsor {
+  flex-direction: column;
+  gap: 45px;
+}
+
+.money li,
+.sponsor li:first-child,
+.basic li {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
+.duration span {
+  flex: 1;
+  background: var(--accent-color);
+  color: var(--bg--color);
+  font-weight: 500;
+}
+.moneyBox {
+  justify-content: space-between;
+}
+.money {
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 17px;
+}
+.money li {
+  width: 150px;
+}
+.money input {
+  width: 150px;
+  padding-left: 0;
+  text-align: center;
+}
+.basicWrap div h3 {
+  height: 50px;
+  line-height: 50px;
+}
+.basic {
+  width: 487px;
+  gap: 15px;
+  padding-bottom: 40px;
+}
+.basic li {
+  flex: 1;
+}
+.basicForm li {
+  align-items: center;
+}
+.name #age {
+  margin-left: 15px;
+}
+.name .age {
+  font-size: var(--tt16-size);
+}
+.infoBox {
+  width: 615px;
+  padding: 30px 10px;
+  margin: 50px 0 0 auto;
+  background: #fbf5ea;
+  color: rgba(0, 0, 0, 0.25);
+}
+.infoBox li {
+  padding: 0 40px 5px;
+  font-size: var(--tt16-size);
+  text-indent: -20px;
+}
+.basicForm,
+.group {
+  flex-direction: column;
+  gap: 20px;
+  font-size: 0;
+}
+.basicForm input,
+.group input {
+  flex: 1;
+}
+.tab-contents {
+  overflow: hidden;
+}
+.tab-contents li {
+  width: 634px;
+}
+.tab-content {
+  display: none;
+}
+.tab-content.on {
+  display: flex;
+}
+.tab-buttons button.on {
+  background: var(--accent-color);
+  color: var(--bg--color);
+  font-weight: 600;
+}
+form .payWrap {
+  padding-bottom: 50px;
+}
+.pay {
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+.pay li {
+  width: 200px;
+  height: 95px;
+}
+form .amountWrap {
+  padding: 38px 0 52px;
+}
+.amount li {
+  justify-content: space-between;
+  width: 100%;
+  padding: 26px 50px;
+  background: var(--bg--color);
+}
+.amount li span {
+  font-weight: 700;
+}
+.agreeWrap {
+  padding-bottom: 0;
+  border: none;
+}
+.agree {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 0 50px;
+}
+.agree li:first-child {
+  width: 100%;
+}
+.agree input {
+  margin-right: 6px;
+}
+.agree label {
+  width: auto;
+}
+.agreeWrap p button {
+  display: block;
+  width: 265px;
+  height: 50px;
+  margin: auto;
+  background: var(--accent-color);
+  color: var(--bg--color);
+  font-weight: 500;
+}
+
+/*footer*/
+footer {
+  width: 100%;
+  background: rgb(7, 106, 183, 0.6);
+  padding: 27px 0 98px;
+}
+.f_t {
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--bg--color);
+  margin-bottom: 20px;
+}
+.f_t .f_logo {
+  padding-bottom: 20px;
+}
+.f_t .f_logo img {
+  width: 120px;
+}
+.f_t .f_gnb {
+  gap: 30px;
+  color: var(--bg--color);
+  font-size: var(--tt20-size);
+  font-weight: 500;
+}
+.f_gnb a {
+  padding: 10px;
+}
+.f_b p {
+  gap: 10px;
+}
+.f_b p b {
+  font-weight: 600;
+}
+.copy {
+  padding-top: 25px;
+  font-size: var(--tt14-size);
+}
