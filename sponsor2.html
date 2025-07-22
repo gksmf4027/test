@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindbridge - 일시후원</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/sponsor2.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/index.js" defer></script>
+    <script src="js/sponsor.js" defer></script>
+  </head>
+  <body>
+    <header class="flex active">
+      <div class="header_b flex inner">
+        <h1 class="logo">
+          <a href="index.html"><img src="img/H_logo.svg" alt="MindBridge" /></a>
+        </h1>
+        <nav class="font">
+          <ul class="gnb flex">
+            <li><a href="">소개</a></li>
+            <li><a href="">참여</a></li>
+            <li><a href="sponsor-main.html">후원</a></li>
+            <li><a href="">고객센터</a></li>
+            <li><a href="">나의 정보</a></li>
+          </ul>
+        </nav>
+      </div>
+      <ul class="util flex inner">
+        <li><button type="button" id="loginBtn">로그인</button></li>
+        <li><a href="">회원가입</a></li>
+        <li>
+          <button type="button" id="bt">language</button>
+          <ul class="language" id="language">
+            <li>
+              <button><img src="img/korea.png" alt="태극기" />KR</button>
+            </li>
+            <li>
+              <button><img src="img/usa.png" alt="성조기" />USA</button>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <section class="modal-overlay flex" id="modalOverlay">
+        <div class="modal-content">
+          <span class="closeBtn">&times;</span>
+          <form action="">
+            <h2 class="login">LOGIN</h2>
+            <ul class="userBox flex">
+              <li class="id">
+                <label for="userId" class="blind">id</label>
+                <input
+                  type="text"
+                  id="userId"
+                  name="userId"
+                  placeholder="ID"
+                  required
+                />
+              </li>
+              <li class="pw">
+                <label for="userPw" class="blind">pw</label>
+                <input
+                  type="password"
+                  id="userPw"
+                  name="userPw"
+                  placeholder="PW"
+                  required
+                />
+              </li>
+            </ul>
+            <div class="autoSavebtn flex">
+              <p>
+                <input type="checkbox" name="autoSave" id="autoSave" />
+                <label for="autoSave">간편로그인 자동저장</label>
+              </p>
+              <p>
+                <span class="bar"><a href="">아이디 찾기</a></span>
+                <span><a href="">비밀번호 찾기</a></span>
+              </p>
+            </div>
+            <!--//autoSavebtn-->
+            <div class="loginBtnWrap">
+              <div class="loginBtn flex">
+                <button class="radius2">로그인</button>
+                <p><a href="" class="radius2">회원가입</a></p>
+              </div>
+              <!--//loginBtn-->
+              <span>또는</span>
+              <ul class="icon flex">
+                <li>
+                  <a href=""
+                    ><img src="img/icoc2-1365.png" alt="1365 자원봉사포털"
+                  /></a>
+                </li>
+                <li>
+                  <a href=""><img src="img/icoc-naver.png" alt="네이버" /></a>
+                </li>
+                <li>
+                  <a href=""><img src="img/icoc-KAKAO.png" alt="카카오톡" /></a>
+                </li>
+              </ul>
+            </div>
+            <!--//loginBtnWrap-->
+          </form>
+        </div>
+        <!--//modal-content-->
+      </section>
+      <!--//modal-overlay-->
+    </header>
+    <main id="app">
+      <form action="">
+        <section class="sponsorWrap">
+          <h2 class="title">후원 정보</h2>
+          <ul class="sponsor flex">
+            <li class="duration flex">
+              <h3 class="sub_title">후원주기</h3>
+              <span>일시후원</span>
+            </li>
+            <li class="moneyBox flex">
+              <h3 class="sub_title">후원금액</h3>
+              <ul class="money flex">
+                <li>
+                  <button
+                    type="button"
+                    :class="{ on: selectedAmount === 10000 }"
+                    @click="setPrice(10000)"
+                  >
+                    10,000원
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    :class="{ on: selectedAmount === 30000 }"
+                    @click="setPrice(30000)"
+                  >
+                    30,000원
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    :class="{ on: selectedAmount === 50000 }"
+                    @click="setPrice(50000)"
+                  >
+                    50,000원
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    :class="{ on: selectedAmount === 100000 }"
+                    @click="setPrice(100000)"
+                  >
+                    100,000원
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    :class="{ on: selectedAmount === 200000 }"
+                    @click="setPrice(200000)"
+                  >
+                    200,000원
+                  </button>
+                </li>
+                <li>
+                  <input
+                    type="text"
+                    placeholder="직접입력"
+                    title="숫자만 입력하세요"
+                    id="numberInput"
+                    v-model="price"
+                    @keydown.enter.prevent
+                    @input="formatPrice"
+                  />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section class="basicWrap">
+          <h2 class="title">기본 정보</h2>
+          <div class="flex">
+            <h3 class="sub_title">구분</h3>
+            <ul class="basic flex tab-buttons">
+              <li>
+                <button type="button" class="on">개인</button>
+              </li>
+              <li>
+                <button type="button">단체/기업</button>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents flex">
+            <ul class="basicForm flex tab-content on">
+              <li class="name flex">
+                <p class="flex">
+                  <label for="userName">이름</label>
+                  <input type="text" id="userName" name="userName" />
+                </p>
+                <p class="flex">
+                  <input type="checkbox" id="age" />
+                  <label for="age" class="age">만 14세 미만</label>
+                </p>
+              </li>
+              <li class="phone flex">
+                <label for="userphone">연락처</label>
+                <input type="text" id="userphone" name="userphone" />
+              </li>
+              <li class="email flex">
+                <label for="userEmail">이메일</label>
+                <input type="email" id="userEmail" name="userEmail" />
+              </li>
+            </ul>
+            <!--//basicForm-->
+            <ul class="group flex tab-content">
+              <li class="flex">
+                <label for="groupName">기업/단체명</label>
+                <input type="text" id="groupName" name="groupName" />
+              </li>
+              <li class="flex">
+                <label for="groupName2">담당자명</label>
+                <input type="text" id="groupName2" name="groupName2" />
+              </li>
+              <li class="flex">
+                <label for="groupPhone">담당자 연락처</label>
+                <input type="text" id="groupPhone" name="groupPhone" />
+              </li>
+              <li class="flex">
+                <label for="groupEmail">담당자 이메일</label>
+                <input type="email" id="groupEmail" name="groupEmail" />
+              </li>
+            </ul>
+            <!--//group-->
+          </div>
+          <ul class="infoBox">
+            <li>
+              ※ 기부금 영수증은 개인정보 기재 시 다음 년도 연말정산 기간 내
+              홈택스에서 조회하실 수 있습니다
+            </li>
+            <li>
+              ※ 만 14세 미만 어린이는 법적보호자의 본인인증 후 진행하실 수
+              있습니다.
+            </li>
+          </ul>
+        </section>
+        <!--//basicWrap-->
+        <section class="payWrap">
+          <h2 class="title">결제 정보</h2>
+          <ul class="pay flex">
+            <li><button type="button" class="on">네이버</button></li>
+            <li><button type="button">페이코</button></li>
+            <li><button type="button">카카오페이</button></li>
+            <li>
+              <button type="button">무통장 가상<br />계좌이체</button>
+            </li>
+            <li><button type="button">계좌이체</button></li>
+            <li><button type="button">신용카드</button></li>
+          </ul>
+        </section>
+        <!--//payWrap-->
+        <section class="amountWrap">
+          <ul class="amount">
+            <li class="flex">
+              <span>최종금액</span><span>{{price}}{{amount}}원</span>
+            </li>
+          </ul>
+        </section>
+        <section class="agreeWrap">
+          <h2 class="blind">동의하기</h2>
+          <ul class="agree flex">
+            <li class="flex">
+              <input type="checkbox" id="allagree" name="allagree" />
+              <label for="allagree">전체 동의하기</label>
+            </li>
+            <li class="flex">
+              <input
+                type="checkbox"
+                id="agree1"
+                name="agree1"
+                class="individual"
+              />
+              <label for="agree1">개인정보수집 및 이용동의</label>
+            </li>
+            <li class="flex">
+              <input
+                type="checkbox"
+                id="agree2"
+                name="agree2"
+                class="individual"
+              />
+              <label for="agree2">개인정보 제3자 제공동의</label>
+            </li>
+            <li class="flex">
+              <input
+                type="checkbox"
+                id="agree3"
+                name="agree3"
+                class="individual"
+              />
+              <label for="agree3">이용약관</label>
+            </li>
+          </ul>
+          <p><button>후원하기</button></p>
+        </section>
+      </form>
+    </main>
+    <footer>
+      <div class="footer inner">
+        <div class="f_t flex">
+          <p class="f_logo"><img src="img/f_logo.svg" alt="MindBridge" /></p>
+          <nav>
+            <ul class="f_gnb flex">
+              <li><a href="">소개</a></li>
+              <li><a href="">참여</a></li>
+              <li><a href="">후원</a></li>
+              <li><a href="">고객센터</a></li>
+              <li><a href="">나의 정보</a></li>
+            </ul>
+          </nav>
+        </div>
+        <address class="f_b">
+          <p class="flex">
+            <span><b>사단법인</b> MindBridge</span
+            ><span><b>주소</b> (30112) 세종특별자치시 도움6로 42(어진동)</span
+            ><span><b>고유번호</b> 123-456-7890</span>
+          </p>
+          <p class="flex">
+            <span><b>대표자</b> 이하늘</span>
+            <span><b>개인정보관리담당자</b> 이하늘</span
+            ><span><b>전화번호</b> 0507-1418-1644</span
+            ><span><b>이메일</b> gksmf4027@naver.com</span>
+          </p>
+
+          <p class="copy">
+            <small
+              >Copyright © 2025 사단법인 MindBridge All rights reserved.</small
+            >
+          </p>
+        </address>
+      </div>
+      <!--//footer-->
+    </footer>
+  </body>
+</html>
